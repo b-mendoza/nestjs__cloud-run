@@ -1,6 +1,7 @@
 FROM node:lts-alpine AS build
 WORKDIR /app
 COPY package*.json ./
+COPY prisma ./prisma
 RUN npm ci --quiet
 COPY . ./
 RUN npm run build
